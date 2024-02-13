@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  vertical-align: middle;
+  background-color: #151618;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
+  text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* section { */
+/*   background-color: #202123; */
+/* } */
+/**/
+/* #54545C */
+
+input, label, select {
+    display: block;
+    margin: auto;
+}
+
+p, input{
+    font-size: 14px;
+    text-align: center;
+}
+
+p::first-letter{
+    text-transform: uppercase;
+}
+
+form {
+  padding-top: 70px;
+  /* border: 3px solid #f1f1f1; */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  /* width: 30%; */
+  padding: 6px 10px;
+  margin: 8px auto;
+  display: block;
+  border: 1px solid #ccc;
+  background-color: #202123;
+  color: white;
+}
+
+.container {
+  padding: 16px;
+}
+
+.border {
+  border: 2px solid gray;
+  box-shadow: black 3px 3px 5px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #202123;
+  color: white;
+  display: block;
+  padding: 8px 12px;
+  margin: 8px auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: space-evenly;
+}
+
+button[disabled] {
+  /* Style for disabled button */
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #029e69 !important;
+}
+
+textarea {
+  background-color: #202123;
+  color: white;
+}
+
+button[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.edit {
+  background-color: #202123;
+}
+
+.editable {
+  border: 2px solid #929292;
+}
+
+.save {
+  background-color: #02b075;
+}
+
+.save:hover {
+  background-color: #029e69 !important;
+}
+
+.hover {
+  background-color: #202123;
+}
+
+.hover:hover {
+  border-radius: 5px;
+  background-color: #029e69 !important;
+}
+
+.cancel {
+  background-color: #dc143c;
+}
+
+.cancel:hover {
+  background-color: #c61236 !important;
+}
+
+.intop {
+  background-color: #c5d5cb90;
+  border-radius: 10px;
+  z-index: 10;
+  position: absolute;
+  top: 2vh;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  grid: none / auto auto;
+}
+
+.hidden {
+  display: none;
+  border: 1px solid green;
+}
+
+.carder {
+  border-radius: 10px;
+  box-shadow: black 1px 1px 2px;
+  margin: 6vh;
+  padding: 2vh;
+}
+
+li {
+  border-radius: 10px;
+  box-shadow: black 1px 1px 2px;
+  margin: 10px;
+}
+
+tr {
+  border-radius: 10px;
+  box-shadow: black 1px 1px 2px;
+  margin: 10px;
+}
+
+.hideSurround {
+  border-radius: none;
+  box-shadow: none;
+}
+
+li > p {
+  margin: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  .view {
+    height: 100%;
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .view {
+    height: 100%;
+    position: relative;
+    max-width: 450px;
+    margin: auto;
+  }
+}

@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6394495c504b35e613e0265d"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77a7"
+  },
+  "ShareDetails": true,
+  "Disinterests": [
+    "travel", "liquor"
+  ],
+  "Description": ""
+},{
+  "_id": {
+    "$oid": "6394495c504b35e613e0265e"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77a8"
+  },
+  "ShareDetails": true,
+  "Disinterests": [
+    "gaming"
+  ],
+  "Description": ""
+},{
+  "_id": {
+    "$oid": "6394495c504b35e613e0265f"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77a9"
+  },
+  "ShareDetails": false,
+  "Disinterests": [
+    "travel", "liquor"
+  ],
+  "Description": ""
+},{
+  "_id": {
+    "$oid": "6394495c504b35e613e02660"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77ba"
+  },
+  "ShareDetails": false,
+  "Disinterests": [
+    "travel"
+  ],
+  "Description": ""
+},{
+  "_id": {
+    "$oid": "6394495c504b35e613e02661"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77b8"
+  },
+  "ShareDetails": true,
+  "Disinterests": [
+    "gaming"
+  ],
+  "Description": ""
+},{
+  "_id": {
+    "$oid": "6394495c504b35e613e02662"
+  },
+  "User": {
+    "$oid": "63922db0fc6d3fc4af8c77b9"
+  },
+  "ShareDetails": true,
+  "Disinterests": [
+    "liquor"
+  ],
+  "Description": ""
+}]

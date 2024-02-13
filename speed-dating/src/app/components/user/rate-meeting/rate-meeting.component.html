@@ -1,0 +1,47 @@
+<div class="view">
+  <body>
+    <div class="content">
+      <div>
+        <app-profile-image
+          class="image"
+          [profile]="matchProfile"
+        ></app-profile-image>
+      </div>
+      <div class="checkboxes">
+        <label
+          ><input
+            type="checkbox"
+            id="dislike"
+            (change)="dislikes($event.srcElement)"
+          />Any intrests you disliked?</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            id="contact"
+            (change)="share($event.srcElement)"
+          />Share contact details?</label
+        >
+      </div>
+      <div *ngIf="dislike && matchProfile?.interests !== null" class="intrests">
+        <p>Select dislikes</p>
+        <app-interests
+          (click)="intrests($event)"
+          [profile]="matchProfile"
+        ></app-interests>
+      </div>
+      <div class="description">
+        <p>Describe date</p>
+        <textarea
+          name="description"
+          placeholder="describe your impressions of the date..."
+          [(ngModel)]="description"
+        ></textarea>
+      </div>
+      <div class="buttons">
+        <button class="save" (click)="saveRating()">SAVE</button>
+        <button class="cancel" (click)="cancel()">CANCEL</button>
+      </div>
+    </div>
+  </body>
+</div>

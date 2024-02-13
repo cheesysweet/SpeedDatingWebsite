@@ -1,0 +1,10 @@
+<div class="profile" *ngIf="profile">
+    <div class="profileImage">
+        <img *ngIf="!edit" src="{{profile.picture}}" alt="User picture">
+        <app-image-upload *ngIf="edit" [profile]="profile" (ifCrop)="updateParent($event)"></app-image-upload>
+    </div>
+    <div *ngIf="!edit">
+        <p>{{ profile.name }}</p>
+    </div>
+</div>
+

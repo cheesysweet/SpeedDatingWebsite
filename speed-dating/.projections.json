@@ -1,0 +1,4 @@
+{
+  "speed-dating/app/*.ts": { "alternate": "speed-dating/app/{}.html" },
+  "speed-dating/app/*.html": { "alternate": "speed-dating/app/{}.ts" }
+}

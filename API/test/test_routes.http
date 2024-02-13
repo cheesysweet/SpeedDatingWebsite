@@ -1,0 +1,420 @@
+@server = http://localhost
+@port = 3000
+@apiPath = api
+@url = {{server}}:{{port}}/{{apiPath}}
+@url2 = https://dt198g-speed-dating.herokuapp.com/api
+
+
+///////////////////////////////////////////////////////////
+// test profile
+###############################################
+
+// Test: Get all users
+// Expected HTTP response status code: 200
+GET {{url2}}/profile
+###############################################
+
+// Test: Get all users
+// Expected HTTP response status code: 200
+GET {{url}}/profile
+
+###############################################
+
+// Test: Get user with id
+// Expected HTTP response status code: 200
+GET {{url}}/profile/6388fbbe436b43573b8a602e
+
+###############################################
+
+// Test: Get User with id
+// Expected HTTP response status code: 404
+GET {{url}}/profile/x
+
+###############################################
+
+// Test: Post (add) a user with all required data
+// Expected HTTP response status code: 201
+// Expected response: the added user object (json)
+# @name addUser
+POST {{url}}/profile HTTP/1.1
+content-type: application/json
+
+{
+   "UserName": "anton",
+   "Name": "anton",
+   "Sex": "man",
+   "Password": "123",
+   "Organizer": true,
+   "Picture": "img.jpg",
+   "PhoneNumber": 694208008,
+   "Description": "The backend was a hell to work with",
+   "Interests": ["animals", "food", "sports"],
+   "Events": []
+}
+###############################################
+
+// picks up id from POST
+// used for deletion of POSTed item
+@uuid = {{addUser.response.body._id}}
+
+###############################################
+
+// Test: Post (add) a user with all required data
+// Expected HTTP response status code: 201
+// Expected response: the added user object (json)
+# @name addUser2
+POST {{url}}/profile HTTP/1.1
+content-type: application/json
+
+{
+   "UserName": "sven",
+   "Name": "sven",
+   "Sex": "man",
+   "Password": "123",
+   "Organizer": true,
+   "Picture": "",
+   "PhoneNumber": 8008542069,
+   "Description": "I like gaming if you can't tell",
+   "Interests": ["gaming", "gaming", "gaming"],
+   "Events": []
+}
+###############################################
+
+// picks up id from POST
+// used for deletion of POSTed item
+@uuid2 = {{addUser2.response.body._id}}
+
+###############################################
+
+// Test: update user profile
+// Expected HTTP response status code: 200
+PUT {{url}}/profile/{{uuid}} HTTP/1.1
+Content-Type: application/json
+
+{
+   "UserName": "anton",
+   "Name": "anton",
+   "Sex": "man",
+   "Password": "123",
+   "Organizer": true,
+   "Picture": "img.jpg",
+   "PhoneNumber": 694208008,
+   "Description": "The backend was a hell to work with",
+   "Interests": ["animals", "food"],
+   "Events": []
+}
+
+###############################################
+
+// Test: update user profile
+// Expected HTTP response status code: 200
+PUT {{url}}/profile/{{uuid}} HTTP/1.1
+Content-Type: application/json
+
+{
+   "UserName": "anton",
+   "Name": "anton",
+   "Sex": "man",
+   "Password": "123",
+   "Organizer": true,
+   "Picture": "img.jpg",
+   "PhoneNumber": 694208008,
+   "Description": "The backend was a hell to work with",
+   "Interests": ["animals", "food", "sports"],
+   "Events": []
+}
+
+###############################################
+
+// Test: Delete a user that does not exists
+// Expected HTTP response status code: 404
+DELETE {{url}}/profile/12543
+
+###############################################
+
+// Test: Delete a user that exists
+// Expected HTTP response status code: 200
+// Can only be run after POST
+DELETE {{url}}/profile/{{uuid}}
+
+
+/////////////////////////////////////////////////////////////////
+// Test meeting
+###############################################
+
+// Test: Get all meeting
+// Expected HTTP response status code: 200
+GET {{url}}/meeting
+
+###############################################
+
+// Test: Get meeting with id
+// Expected HTTP response status code: 200
+GET {{url}}/meeting/123
+
+
+###############################################
+
+// Test: Post (add) a meeting with all required data
+// Expected HTTP response status code: 404
+// Expected response: the added user object (json)
+// Cant add a meeting without required User1/2 fields
+# @name addmeeting
+POST {{url}}/meeting HTTP/1.1
+content-type: application/json
+
+{
+   "User1": {{uuid}},
+   "User2": {{uuid2}},
+   "Table": 5,
+   "User1Results": "",
+   "User2Results": ""
+}
+
+###############################################
+
+// picks up id from POST
+// used for deletion of POSTed item
+@meid = {{addmeeting.response.body._id}}
+
+###############################################
+// Test: update meeting
+// Expected HTTP response status code: 404
+// Cant update a meeting without required User1/2 fields
+PUT {{url}}/meeting/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "User1": "",
+   "User2": "",
+   "Table": 7,
+   "User1Results": "",
+   "User2Results": ""
+}
+
+###############################################
+// Test: update meeting
+// Expected HTTP response status code: 404
+// Cant update a meeting without required User1/2 fields
+PUT {{url}}/meeting/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "User1": "",
+   "User2": "",
+   "Table": 8,
+   "User1Results": "",
+   "User2Results": ""
+}
+
+###############################################
+
+// Test: Delete a meeting that does not exists
+// Expected HTTP response status code: 404
+DELETE {{url}}/meeting/x
+
+###############################################
+
+// Test: Delete a meeting that does not exists
+// Expected HTTP response status code: 404
+// Can only be run after POST
+DELETE {{url}}/profile/{{meid}}
+
+/////////////////////////////////////////////////////////////////
+// Test event
+###############################################
+
+// Test: Get all events
+// Expected HTTP response status code: 200
+GET {{url}}/event
+
+###############################################
+
+// Test: get event with id
+// Expected HTTP response status code: 200
+GET {{url}}/event/123
+
+###############################################
+
+// Test: Post (add) a event with all required data
+// Expected HTTP response status code: 201
+// Expected response: the added user object (json)
+# @name addevent
+POST {{url}}/event HTTP/1.1
+Content-Type: application/json
+
+{
+  "Location": "Östersund",
+  "Map": "",
+  "Tables": {
+    "tableList": [
+      {
+        "x": 1,
+        "y": 1,
+        "index": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "index": 1
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "index": 2
+      }
+    ],
+    "size": 20,
+    "width": 300,
+    "height": 150
+  },
+  "Date": "2022-12-12",
+  "Participants": [],
+  "Meetings": []
+}
+
+###############################################
+
+// picks up id from POST
+// used for deletion of POSTed item
+@evid = {{addevent.response.body._id}}
+
+###############################################
+
+// Test: update event
+// Expected HTTP response status code: 200
+PUT {{url}}/event/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "Location": "Sundsvall",
+   "Map": "",
+   "Date": "2022-12-30",
+   "Participants": [{{uuid}}],
+   "Meetings": [{{meid}}]
+}
+
+###############################################
+
+// Test: update event
+// Expected HTTP response status code: 200
+PUT {{url}}/event/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "Location": "åre",
+   "Map": "",
+   "Date": "2022-12-14",
+   "Participants": [{{uuid}},{{uuid2}}],
+   "Meetings": []
+}
+
+###############################################
+
+// Test: Delete a event that does not exists
+// Expected HTTP response status code: 404
+DELETE {{url}}/event/x
+
+###############################################
+
+// Test: Delete a event that exists
+// Expected HTTP response status code: 200
+// Can only be run after POST
+DELETE {{url}}/event/{{evid}}
+
+/////////////////////////////////////////////////////////////////
+// Test dateResults
+###############################################
+
+// Test: Get all dateResults
+// Expected HTTP response status code: 200
+GET {{url}}/dateResults
+
+###############################################
+
+// Test: Get dateResults with id
+// Expected HTTP response status code: 200
+GET {{url}}/dateResults/123
+
+
+###############################################
+
+// Test: Post (add) a dateResults with all required data
+// Expected HTTP response status code: 404
+// Expected response: the added user object (json)
+// Cant create a dateResult without required User field
+# @name addresult
+POST {{url}}/dateResults HTTP/1.1
+content-type: application/json
+
+{
+   "User": {{uuid}},
+   "ShareDetails": true,
+   "Disinterests": [],
+   "Description": ""
+}
+
+###############################################
+
+// Test: Post (add) a dateResults with all required data
+// Expected HTTP response status code: 404
+// Expected response: the added user object (json)
+// Cant create a dateResult without required User field
+POST {{url}}/dateResults HTTP/1.1
+content-type: application/json
+
+{
+   "User": {{uuid2}},
+   "ShareDetails": true,
+   "Disinterests": [""],
+   "Description": ""
+}
+
+###############################################
+
+// picks up id from POST
+// used for deletion of POSTed item
+@reid = {{addresult.response.body._id}}
+
+###############################################
+
+// Test: update dateResults
+// Expected HTTP response status code: 404
+// Cant update a dateResult without required User field
+PUT {{url}}/dateResults/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "User": "",
+   "ShareDetails": false,
+   "Disinterests": [],
+   "Description": "ababababab"
+}
+
+###############################################
+
+// Test: update dateResults
+// Expected HTTP response status code: 404
+// Cant update a dateResult without required User field
+PUT {{url}}/dateResults/x HTTP/1.1
+Content-Type: application/json
+
+{
+   "User": "",
+   "ShareDetails": true,
+   "Disinterests": [],
+   "Description": "gagagagagag"
+}
+
+###############################################
+
+// Test: Delete a dateResult that does not exists
+// Expected HTTP response status code: 404
+DELETE {{url}}/dateResults/x
+
+###############################################
+
+// Test: Delete a dateResult that does not exists
+// Expected HTTP response status code: 404
+// Can only be run after POST
+DELETE {{url}}/dateResults/{{reid}}

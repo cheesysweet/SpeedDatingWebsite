@@ -1,0 +1,36 @@
+.formatting {
+  display: grid;
+  grid: 90% 10% / 90% 10%;
+}
+
+.onbottom {
+  position: relative;
+  z-index: 1;
+}
+
+.shade {
+  filter: blur(5px)
+}
+
+.flex {
+  display: flex;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.spanner {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+}
+
+.sizer {
+  width: 15vw;
+}
+
+.wrap {
+  overflow-wrap: true;
+}
+

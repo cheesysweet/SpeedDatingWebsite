@@ -1,0 +1,118 @@
+<section class="intop">
+  <aside [ngClass]="show ? 'onbottom' : ''">
+    <table class="profileAside">
+      <tr
+        class="profiles editable"
+        #option1
+        [ngClass]="chosenElem1 == option1 ? 'save' : ''"
+        (click)="resetTable(); chosenElem1 = option1; choice1 = true"
+      >
+        <img
+          src="{{ meeting?.user1?.picture }}"
+          alt="{{ meeting?.user1?.name }} image"
+          class="image"
+          (click)="show = true; showPart = meeting?.user1; showPart2 = meeting?.user2;"
+        />
+        <aside class="visualWeight">
+          <p>Name: {{ meeting?.user1?.name }}</p>
+          <p>
+            Description:
+            {{ meeting?.user1?.description }}
+          </p>
+        </aside>
+      </tr>
+      <tr
+        class="profiles editable"
+        #option2
+        [ngClass]="chosenElem1 == option2 ? 'save' : ''"
+        (click)="resetTable(); choice1 = false; chosenElem1 = option2"
+      >
+        <img
+          src="{{ meeting?.user2?.picture }}"
+          alt="{{ meeting?.user1?.name }} image"
+          class="image"
+          (click)="show = true; showPart = meeting?.user2; showPart2 = meeting?.user1;"
+        />
+        <aside class="visualWeight">
+          <p>Name: {{ meeting?.user2?.name }}</p>
+          <p>
+            Description:
+            {{ meeting?.user2?.description }}
+          </p>
+        </aside>
+      </tr>
+    </table>
+
+    <aside>
+      <div>
+        <button class="cancel" (click)="back(false)">BACK</button>
+      </div>
+      <p
+        #meetingTable
+        [ngClass]="chosenElem1 == meetingTable ? 'save' : ''"
+        class="editable visualWeight"
+        (click)="reloadMeetings(); chosenElem1 = meetingTable; table = true"
+      >
+        Current Table: {{ meeting?.table }}
+        <br />
+        Click to change
+      </p>
+      <button (click)="changeTable()">change table</button>
+      <ul *ngIf="hidden" class="list_style_none">
+        <ng-container *ngFor="let table of meetingList">
+          <li
+            *ngIf="
+              table.table != meeting!!.table &&
+              event?.currentStage == table.meetingNumber
+            "
+            class="border"
+          >
+            <p
+              #table1
+              [ngClass]="chosenElem2 == table1 ? 'save' : ''"
+              (click)="
+                reloadMeetings(); chosenElem2 = table1; tableIndex = table.table
+              "
+            >
+              Table: {{ table.table }}
+            </p>
+            <p
+              #user1
+              [ngClass]="chosenElem2 == user1 ? 'save' : ''"
+              class="center editable"
+              (click)="
+                resetTable();
+                temp2 = table.user1;
+                meetingNumber = table._id;
+                choice2 = true;
+                chosenElem2 = user1;
+              "
+            >
+              {{ table.user1.name }}
+            </p>
+            <p
+              #user2
+              [ngClass]="chosenElem2 == user2 ? 'save' : ''"
+              class="center editable"
+              (click)="
+                resetTable();
+                temp2 = table.user2;
+                meetingNumber = table._id;
+                choice2 = false;
+                chosenElem2 = user2;
+              "
+            >
+              {{ table.user2.name }}
+            </p>
+            <button class="save" (click)="save()">Save Selection</button>
+          </li>
+        </ng-container>
+      </ul>
+    </aside>
+    <app-participant-info *ngIf="showPart2 && showPart" [ngClass]="show? 'intop': 'hidden'" class="blackGround"
+      (click)="show = false;"
+      [participant1]="showPart2"
+      [participant2]="showPart"
+      ></app-participant-info>
+  </aside>
+</section>

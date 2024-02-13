@@ -1,0 +1,25 @@
+<div class="view">
+    <body>
+        <div class="content">
+            <div *ngIf="!matches">
+                <div class="buttons">
+                    <button class="left" (click)="viewMatches()">Matches</button>
+                    <button class="rigt" (click)="viewProfile()">Profile</button>
+                </div>
+                <div>
+                    <app-display-events [profile]="profile"></app-display-events>
+                </div>
+            </div>
+            <div *ngIf="matches" class="matches">
+                <p *ngIf="allMatches.length < 1">you have no matches</p>
+                <div *ngFor="let match of allMatches">
+                    <div class="border" (click)="checkoutProfile(match)">
+                        <img src="{{match.picture}}" alt="profile picture">
+                        <p>{{match.name}}</p>
+                    </div>
+                </div>
+                <button (click)="viewMatches()">Close</button>
+            </div>
+        </div>
+    </body>
+</div>

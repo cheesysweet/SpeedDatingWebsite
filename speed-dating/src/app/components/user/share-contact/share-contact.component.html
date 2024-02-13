@@ -1,0 +1,9 @@
+<div class="view">
+    <p>Share contact information</p>
+    <div *ngFor="let profile of profiles; let i = index" class="border">
+        <div class="spacing">
+            <app-show-matches class="image" [profile]="profile" [meeting]="meeting[i]"></app-show-matches>
+        </div>
+    </div>
+    <button class="save" (click)="saveResults()">SAVE</button>
+</div>

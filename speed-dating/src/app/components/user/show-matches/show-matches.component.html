@@ -1,0 +1,9 @@
+<div class="view">
+    <div class="profileImage" *ngIf="profile">
+        <img src="{{profile.picture}}" alt="User picture">
+    </div>
+    <div class="content">
+        <p>{{ profile?.name }}</p>
+        <label><input type="checkbox" name="share" id="share" (change)="share($event.srcElement)" [checked]="shareDetails">Share contact details?</label>
+    </div>
+</div>

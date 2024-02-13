@@ -1,0 +1,63 @@
+<tr
+  class="event-container"
+  [ngClass]="{ 'odd-row': index! % 2 !== 0, 'even-row': index! % 2 === 0 }"
+>
+  <p class="event-header">Event: {{ index! + 1 }}</p>
+  <div class="event-standard-info">
+    <td>{{ event!.location }}</td>
+    <td class="separator">|</td>
+    <td>{{ event!.date | date : "yyyy-MM-dd" }}</td>
+    <td class="separator">|</td>
+    <td>{{ event!.date | date : "HH:mm" }}</td>
+  </div>
+  <ng-template #expandedContent>
+    <p class="participants-header">Participants:</p>
+    <ul [ngClass]="getColumnClass()">
+      <li *ngFor="let participant of event!.participants">
+        {{ participant.userName }}
+      </li>
+    </ul>
+    <br />
+    <ng-template #joinEventButton>
+      <!-- Display the "Join Event" button here -->
+      <button class="save" (click)="onJoinEventClick()">Join Event</button>
+    </ng-template>
+    <ng-template #editEventButton>
+      <!-- Display the "Edit Event" button here -->
+      <button class="edit" (click)="onEditEventClick(event!._id)">
+        Edit Event
+      </button>
+    </ng-template>
+    <button
+      *ngIf="
+        event &&
+        profile &&
+        event.organizer._id !== profile._id &&
+        profileExistsInEvent()
+      "
+      (click)="goToEvent()"
+    >
+      Go To Event
+    </button>
+    <div
+      *ngIf="
+        event &&
+        profile &&
+        event.organizer._id !== profile._id &&
+        !profileExistsInEvent()
+      "
+      [ngTemplateOutlet]="joinEventButton"
+      class="button-container"
+    ></div>
+    <div
+      *ngIf="event && profile && event.organizer._id === profile._id"
+      [ngTemplateOutlet]="editEventButton"
+      class="button-container"
+    ></div>
+  </ng-template>
+  <div
+    *ngIf="isExpanded"
+    [ngTemplateOutlet]="expandedContent"
+    colspan="6"
+  ></div>
+</tr>

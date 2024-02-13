@@ -1,0 +1,29 @@
+<h2>Create Event</h2>
+<section class="create-event-container">
+  <section class="form-container">
+    <form [formGroup]="createEventForm">
+      <label>
+        Location:
+        <input type="text" formControlName="location">
+      </label>
+      <br>
+      <label>
+        Date:
+        <input type="date" formControlName="date">
+      </label>
+      <br>
+      <label>
+        Time:
+        <input type="time" formControlName="time">
+      </label>
+    </form>
+  </section>
+  <section class="table-list-container">
+    <app-table-list [tables]="startingTables"></app-table-list>
+  </section>
+</section>
+<section class="submit-container.button">
+  <button (click)="onSubmit()" [disabled]="createEventForm.invalid">Create Event</button>
+</section>
+
+

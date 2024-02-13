@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "639448cc504b35e613e02655"
+  },
+  "Location": "Östersund",
+  "Map": "",
+  "Date": "2022-12-24",
+  "Participants": [
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a7"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a8"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a9"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77ba"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77b9"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77b8"
+    }
+  ],
+  "Meetings": [
+    {
+      "$oid": "6394475e504b35e613e0263c"
+    },
+    {
+      "$oid": "6394475e504b35e613e0263d"
+    },
+    {
+      "$oid": "6394492d504b35e613e02659"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "639448cc504b35e613e02656"
+  },
+  "Location": "Sundsvall",
+  "Map": "",
+  "Date": "2022-12-30",
+  "Participants": [
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a7"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a8"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77a9"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77ba"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77b9"
+    },
+    {
+      "$oid": "63922db0fc6d3fc4af8c77b8"
+    }
+  ],
+  "Meetings": [
+    
+  ]
+},{
+  "_id": {
+    "$oid": "639448cc504b35e613e02657"
+  },
+  "Location": "Östersund",
+  "Map": "",
+  "Date": "2022-12-24",
+  "Participants": [
+    {
+      "$oid": "63944928504b35e613e02658"
+    }
+  ],
+  "Meetings": [
+
+  ]
+}]

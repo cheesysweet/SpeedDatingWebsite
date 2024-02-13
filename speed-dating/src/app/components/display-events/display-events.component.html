@@ -1,0 +1,13 @@
+<h2 class="center">{{ header }}</h2>
+<section id="event-container">
+  <table>
+    <tbody>
+      <app-event-row
+        *ngFor="let event of events; index as i"
+        [index]="i"
+        [event]="event"
+        [profile]="profile"
+      ></app-event-row>
+    </tbody>
+  </table>
+</section>

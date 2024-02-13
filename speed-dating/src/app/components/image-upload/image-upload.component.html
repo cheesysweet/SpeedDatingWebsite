@@ -1,0 +1,38 @@
+<div class="top"></div>
+<label class="image-upload-container btn btn-bwm">
+    <p *ngIf="!profile?.picture">Upload image</p>
+    <img *ngIf="profile && !cropImage" class="img-preview" [src]="profile.picture">
+    <img *ngIf="cropImage && croppedImage" class="croped" [src]="croppedImage">
+    <input #imageInput 
+    type="file" 
+    accept="image/*" 
+    (change)="fileChangeEvent($event)">
+</label>
+
+<mat-card *ngIf="cropImage" class="cropping">
+    <mat-card-content>
+        <div>
+            <image-cropper
+            [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="4/4"
+            [resizeToWidth]="300"
+            (imageCropped)="imageCropped($event)"
+            ></image-cropper>
+        </div>
+        <div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="save" (click)="saveImage()">Save image</button>
+        <button class="cancel" (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+</mat-card>
+
+<div *ngIf="image" class="img-preview-container">
+    <div *ngIf="image.pending" class="img-loading-overlay">
+        <div class="img-spinning-circle"></div>
+    </div>
+</div>
+
+

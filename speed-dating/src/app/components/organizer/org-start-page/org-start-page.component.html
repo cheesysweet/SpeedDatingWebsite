@@ -1,0 +1,17 @@
+<section>
+  <app-display-events></app-display-events>
+  <div *ngIf="profile && profile.organizer" class="button-container">
+    <ng-template [ngTemplateOutlet]="createEventButton"></ng-template>
+  </div>
+  <ng-template #createEventButton>
+    <button (click)="onCreateEventClick()">Create Event</button>
+  </ng-template>
+  <div class="view-profile-btn-container">
+    <button (click)="onViewProfileClick()">View Profile</button>
+  </div>
+</section>
+
+
+
+
+

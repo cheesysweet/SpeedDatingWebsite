@@ -1,0 +1,32 @@
+
+@media screen and (max-width: 450px) {
+    div {
+        margin: auto;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    div {
+        margin: auto;
+        width: 450px;
+    }
+}
+
+
+.intrests {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    text-transform: capitalize;
+    border-style: solid;
+    border-radius: 15px;    
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-color: #929292;
+    cursor: pointer;
+}

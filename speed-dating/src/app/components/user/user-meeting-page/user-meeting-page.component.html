@@ -1,0 +1,54 @@
+<div class="view">
+  <section [ngClass]="clicked || rate ? 'shade' : ''" class="onbottom">
+    <aside>
+      <div *ngIf="meeting?.table">
+        <p>Current table: {{ meeting?.table?.valueOf()!! + 1 }}</p>
+      </div>
+      <div *ngIf="!(meeting?.table)">
+        <p>No Assigned Table</p>
+      </div>
+      <div>
+        <aside>
+          <app-display-tables
+            *ngIf="event?.tables != undefined && meeting"
+            [tables]="event?.tables"
+            [chosenIndex]="meeting.table.valueOf()"
+          ></app-display-tables>
+          <app-display-tables
+            *ngIf="event?.tables != undefined && !meeting"
+            [tables]="event?.tables"
+            [chosenIndex]="-1"
+          ></app-display-tables>
+        </aside>
+      </div>
+      <div>
+        <p *ngIf="event?.currentStage!! > 0">
+          Current stage: {{ event?.currentStage }}
+        </p>
+        <p *ngIf="event?.currentStage!! < 0">Event not started</p>
+      </div>
+      <div class="flex">
+        <button class="save" (click)="connect()">connect</button>
+        <button class="cancel" *ngIf="started" (click)="close()">CLOSE</button>
+      </div>
+      <div class="flex">
+        <button *ngIf="socket !== undefined" (click)="requestNewTable()">Request new Table</button>
+        <button (click)="clicked = true">View Profile</button>
+      </div>
+    </aside>
+  </section>
+  <aside *ngIf="rate" class="intop">
+    <app-rate-meeting
+      [currentMeeting]="meeting!!"
+      [currentProfile]="user!!"
+      [matchProfile]="otherUser!!"
+      (saved)="doneRating($event)"
+    ></app-rate-meeting>
+  </aside>
+  <aside *ngIf="clicked" class="intop">
+    <div>
+      <app-meeting-info [profile]="otherUser!!"></app-meeting-info>
+      <button (click)="clicked = false">close</button>
+    </div>
+  </aside>
+</div>

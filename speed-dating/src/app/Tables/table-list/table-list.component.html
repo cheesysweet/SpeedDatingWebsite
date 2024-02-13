@@ -1,0 +1,22 @@
+<section class="columns">
+  <canvas class="border" #myCanvas (mousedown)="move($event)" (mouseup)="finishMove()">
+  </canvas>
+  <aside class="single_column">
+    <label>
+      Width:
+      <input #width type="text" value="{{ canvaswidth }}" (change)="changeWidth(width.value)">
+    </label>
+    <label>
+      Height:
+      <input #height type="text" value="{{ canvasheight }}" (change)="changeHeight(height.value)">
+    </label>
+    <label>
+      # of Tables:
+      <input #num type="number" value="{{ numTable }}" (change)="changeTableList(num.value)">
+    </label>
+    <label>
+      Size Tables:
+      <input #tableSize type="number" value="{{ size }}" (change)="changeTableSize(tableSize.value)">
+    </label>
+  </aside>
+</section>

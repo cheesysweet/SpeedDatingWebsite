@@ -1,0 +1,11 @@
+
+h2 {
+  text-align: center;
+}
+
+
+/* Add padding to containers */
+
+.button-container {
+  margin-top: 20px;
+}

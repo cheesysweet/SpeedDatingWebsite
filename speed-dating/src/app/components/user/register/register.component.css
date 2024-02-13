@@ -1,0 +1,43 @@
+h2 {
+  text-align: center;
+}
+
+.radio_label{
+  padding-left: 5px;
+  padding-right: 20px;
+}
+
+.radiobutton {
+  width: 30%;
+  padding: 6px 10px;
+  margin: 8px auto;
+  display: inline;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  display: block;
+  color: white;
+  padding: 8px 12px;
+  margin: 8px auto;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+

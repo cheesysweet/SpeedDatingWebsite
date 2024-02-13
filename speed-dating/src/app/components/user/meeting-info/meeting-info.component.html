@@ -1,0 +1,21 @@
+<div class="view">
+  <body>
+    <div class="content">
+      <div>
+        <app-profile-image class="image" [profile]="profile"></app-profile-image>
+      </div>
+      <div>
+        <app-interests class="intrests" [profile]="profile"></app-interests>
+      </div>
+      <div class="info" *ngIf="boolean">
+        <p>PhoneNumber: {{ profile?.phoneNumber }}</p>
+      </div>
+      <div class="description">
+        <p>Description</p>
+        <textarea readonly name="description">{{
+          profile?.description
+        }}</textarea>
+      </div>
+    </div>
+  </body>
+</div>

@@ -1,0 +1,52 @@
+.view {
+  margin-top: 35px;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+.onbottom {
+  position: relative;
+  z-index: 1;
+}
+
+.shade {
+  filter: blur(5px)
+}
+
+.flex {
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.flex button {
+  width: 45%;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.spanner {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+}
+
+.hidden {
+  display: none;
+  border: 1px solid green;
+}
+
+.wrap {
+  overflow-wrap: true;
+}
+
+.intop {
+  display: grid;
+  grid: auto auto;
+}

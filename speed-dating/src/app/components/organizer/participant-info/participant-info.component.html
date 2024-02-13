@@ -1,0 +1,62 @@
+<div class="view">
+  <section>
+    <div class="content">
+
+      <div *ngIf="isUSer1" class="user1">
+        <div class="image">
+          <app-profile-image
+            class="img"
+            [profile]="participant1!"
+          ></app-profile-image>
+
+        </div>
+
+        <div class="interests">
+          <app-interests
+            [profile]="participant1!"
+          ></app-interests>
+        </div>
+
+        <div class="info">
+          <p>Phone Number: {{ participant1!.phoneNumber }}</p>
+          <p>Sex: {{ participant1!.sex }}</p>
+        </div>
+
+
+        <div class="review">
+              <p *ngIf=isUser1_Description>Review: {{this.user1_Description}}</p>
+        </div>
+      </div>
+
+      <div *ngIf="!isUSer1" class="user1">
+        <div class="image">
+          <app-profile-image
+            class="img"
+            [profile]="participant2!"
+          ></app-profile-image>
+
+        </div>
+
+        <div class="interests">
+          <app-interests
+            [profile]="participant2!"
+          ></app-interests>
+        </div>
+
+        <div class="info">
+          <p>Phone Number: {{ participant2!.phoneNumber }}</p>
+          <p>Sex: {{ participant2!.sex }}</p>
+        </div>
+
+
+        <div class="review">
+              <p *ngIf=isUser2_Description>Review: {{this.user2_Description}}</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+

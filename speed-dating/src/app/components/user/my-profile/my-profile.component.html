@@ -1,0 +1,112 @@
+<div class="view">
+  <section>
+    <div class="content" *ngIf="profile !== null">
+      <p *ngIf="edit"></p>
+      <div *ngIf="!edit">
+        <button class="edit" (click)="editButton()">EDIT</button>
+      </div>
+      <div class="image">
+        <app-profile-image
+          class="img"
+          [profile]="profile!"
+          [edit]="edit"
+          (ifCrop)="updateParent($event)"
+        ></app-profile-image>
+        <div *ngIf="edit && !ifCrop">
+          <label>
+            Enter name:
+            <input type="text" [(ngModel)]="profile!.name" />
+          </label>
+          <label>
+            Change password:
+            <input type="password" [(ngModel)]="profile!.password" />
+          </label>
+        </div>
+      </div>
+      <div *ngIf="!ifCrop" class="intrests">
+        <label *ngIf="edit && intrests.length < 3" class="select"
+          >Select a maximum of 3 interests:
+          <select
+            name="intres"
+            id="intres"
+            #intres
+            (change)="onSelected(intres.value)"
+          >
+            <option default>Select your interest</option>
+            <option *ngFor="let i of allIntrests" value="{{ i }}">
+              {{ i }}
+            </option>
+          </select>
+        </label>
+        <label *ngIf="edit && intrests.length >= 3"
+          >Click to remove a interest</label
+        >
+        <app-interests
+          (click)="chosenIntrests($event)"
+          [profile]="profile!"
+        ></app-interests>
+      </div>
+      <div *ngIf="!ifCrop">
+        <div class="info" *ngIf="!edit">
+          <p>PhoneNumber: {{ profile!.phoneNumber }}</p>
+          <p>Sex: {{ profile!.sex }}</p>
+        </div>
+        <div class="info" *ngIf="edit">
+          <label
+            >PhoneNumber: <input type="text" [(ngModel)]="profile!.phoneNumber"
+          /></label>
+          <label
+            >Sex:
+            <select
+              *ngIf="profile!.sex === 'man'"
+              #sex
+              (change)="changeSex(sex.value)"
+            >
+              <option default>{{ profile!.sex }}</option>
+              <option value="woman">woman</option>
+            </select>
+            <select
+              *ngIf="profile!.sex === 'woman'"
+              #sex
+              (change)="changeSex(sex.value)"
+            >
+              <option default>{{ profile!.sex }}</option>
+              <option value="man">man</option>
+            </select>
+            <select
+              *ngIf="profile!.sex === ''"
+              #sex
+              (change)="changeSex(sex.value)"
+            >
+              <option default>CHOOSE SEX</option>
+              <option value="woman">woman</option>
+              <option value="man">man</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div *ngIf="!ifCrop" class="description">
+        <p>Personal description</p>
+        <textarea
+          [readOnly]="!edit"
+          name="description"
+          placeholder="Write a short description about your shelf..."
+          rows="5"
+          [(ngModel)]="profile!.description"
+        ></textarea>
+      </div>
+      <div *ngIf="edit && !ifCrop" class="buttons">
+        <button class="save" (click)="saveProfile()">SAVE</button>
+        <button class="cancel" (click)="cancel()">CANCEL</button>
+      </div>
+      <!-- placeholder divs to keep the size of the page-->
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+      <div *ngIf="ifCrop"></div>
+    </div>
+  </section>
+</div>

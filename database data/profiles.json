@@ -1,0 +1,435 @@
+[{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77a7"
+  },
+  "UserName": "anton",
+  "Name": "anton",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 694208008,
+  "Description": "The backend was a hell to work with",
+  "Interests": [
+    "animals",
+    "food",
+    "sports"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77a8"
+  },
+  "UserName": "carl",
+  "Name": "carl",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": false,
+  "Picture": "img.jpg",
+  "PhoneNumber": 279458203,
+  "Description": "Det var en gång en bot",
+  "Interests": [
+    "liquor",
+    "movies",
+    "animals"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77a9"
+  },
+  "UserName": "sven",
+  "Name": "sven",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": {
+    "$numberLong": "8008542069"
+  },
+  "Description": "I like gaming if you can't tell",
+  "Interests": [
+    "gaming",
+    "gaming",
+    "gaming"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77aa"
+  },
+  "UserName": "ture",
+  "Name": "ture",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 586405790,
+  "Description": "",
+  "Interests": [
+    "hiking",
+    "movies",
+    "animals"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77ab"
+  },
+  "UserName": "fia",
+  "Name": "fia",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 833303177,
+  "Description": "",
+  "Interests": [
+    "food",
+    "hiking",
+    "movies"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77ac"
+  },
+  "UserName": "lars",
+  "Name": "lars",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 526552411,
+  "Description": "",
+  "Interests": [
+    "hiking",
+    "liquor",
+    "sports"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77ad"
+  },
+  "UserName": "klara",
+  "Name": "klara",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 987288240,
+  "Description": "",
+  "Interests": [
+    "food",
+    "training",
+    "movies"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77ae"
+  },
+  "UserName": "stefan",
+  "Name": "stefan",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 561355952,
+  "Description": "",
+  "Interests": [
+    "food",
+    "animals",
+    "sports"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77af"
+  },
+  "UserName": "oscar",
+  "Name": "oscar",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 629726241,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "gaming",
+    "animals"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b0"
+  },
+  "UserName": "emil",
+  "Name": "emil",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 861373340,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "animals"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b1"
+  },
+  "UserName": "linus",
+  "Name": "linus",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 270758772,
+  "Description": "",
+  "Interests": [
+    "training",
+    "travel"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b2"
+  },
+  "UserName": "fredrik",
+  "Name": "fredrik",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 680411388,
+  "Description": "",
+  "Interests": [
+    "training",
+    "animals",
+    "hiking"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b3"
+  },
+  "UserName": "peter",
+  "Name": "peter",
+  "Sex": "man",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 977624310,
+  "Description": "",
+  "Interests": [
+    "gaming",
+    "animals"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b4"
+  },
+  "UserName": "stefania",
+  "Name": "stefania",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 551854269,
+  "Description": "",
+  "Interests": [
+    "training",
+    "gaming",
+    "liquor"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b5"
+  },
+  "UserName": "petricia",
+  "Name": "petricia",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 260930282,
+  "Description": "",
+  "Interests": [
+    "hiking",
+    "food",
+    "liquor"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b6"
+  },
+  "UserName": "olivia",
+  "Name": "olivia",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 759775630,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "movies",
+    "liquor"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b7"
+  },
+  "UserName": "emma",
+  "Name": "emma",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 127010732,
+  "Description": "",
+  "Interests": [
+    "animals",
+    "liquor"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b8"
+  },
+  "UserName": "charlotte",
+  "Name": "charlotte",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 449012293,
+  "Description": "",
+  "Interests": [
+    "liquor",
+    "travel"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77b9"
+  },
+  "UserName": "amelia",
+  "Name": "amelia",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 359592535,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "hiking",
+    "animals"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77ba"
+  },
+  "UserName": "ava",
+  "Name": "ava",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 837236544,
+  "Description": "",
+  "Interests": [
+    "hiking",
+    "food",
+    "sports"
+  ],
+  "Events": [
+    {
+      "$oid": "639448cc504b35e613e02655"
+    },
+    {
+      "$oid": "639448cc504b35e613e02656"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77bb"
+  },
+  "UserName": "sophia",
+  "Name": "sophia",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 253719081,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "food"
+  ],
+  "Events": []
+},{
+  "_id": {
+    "$oid": "63922db0fc6d3fc4af8c77bc"
+  },
+  "UserName": "isabella",
+  "Name": "isabella",
+  "Sex": "woman",
+  "Password": "123",
+  "Organizer": true,
+  "Picture": "img.jpg",
+  "PhoneNumber": 336743327,
+  "Description": "",
+  "Interests": [
+    "travel",
+    "liquor",
+    "food"
+  ],
+  "Events": []
+}]

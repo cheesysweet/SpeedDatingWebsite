@@ -1,0 +1,12 @@
+<div class="intrests" *ngIf="router.url === '/rateMeeting'">
+    <p 
+    (click)="changeColor[i]=!changeColor[i]" 
+    [style.background-color]="changeColor[i]? 'crimson': 'transparent'" 
+    [style.border-color]="'crimson'"
+    *ngFor="let interest of profile?.interests; 
+    let i = index">{{interest}}
+    </p>
+</div>
+<div class="intrests" *ngIf="router.url !== '/rateMeeting'">
+    <p *ngFor="let interest of profile?.interests; let i = index">{{interest}}</p>
+</div>

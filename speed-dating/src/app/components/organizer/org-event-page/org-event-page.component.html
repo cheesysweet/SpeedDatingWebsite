@@ -1,0 +1,119 @@
+<section class="onbottom">
+  <aside [ngClass]="meeting != undefined ? ['shade'] : ''" class="formatting">
+    <div class="flex">
+      <p *ngIf="event && event!!.currentStage > 0">
+        Current stage: {{ event?.currentStage }}
+      </p>
+      <p *ngIf="event && event!!.currentStage <= 0">Event not Started</p>
+      <br />
+      <button
+        class="save"
+        *ngIf="started && beforeNext"
+        (click)="nextStage(); beforeNext = false"
+      >
+        CHANGE STAGE
+      </button>
+      <button
+        class="save"
+        *ngIf="event && event!!.meetings.length > 0 && started && !beforeNext && event!!.currentStage <= 0"
+        (click)="nextStage()"
+      >
+        START MEETINGS
+      </button>
+      <button 
+        *ngIf="event && event!!.meetings.length <= 0"
+        (click)="makeMeetings()"
+        >MAKE MEETINGS</button>
+      <button
+        class="edit"
+        *ngIf="started && !beforeNext && event && event!!.currentStage > 0"
+        (click)="beforeNextStage(); beforeNext = true"
+      >
+        BEFORE NEXT
+      </button>
+      <button class="save" *ngIf="!started && !last" (click)="start()">
+        START
+      </button>
+      <button class="cancel" *ngIf="started && last" (click)="close()">
+        DONE
+      </button>
+      <!-- <button *ngIf="!started" class="save" (click)="connect()">connect</button> -->
+      <button class="cancel" *ngIf="started" type="button" (click)="close()">
+        CLOSE
+      </button>
+    </div>
+    <div class="flex">
+      <aside *ngIf="!edit">
+        <button (click)="editEvent()">EDIT</button>
+      </aside>
+      <aside *ngIf="edit">
+        <button class="save" (click)="saveEvent()">SAVE</button>
+      </aside>
+      <button (click)="back()">BACK</button>
+    </div>
+    <div>
+      <aside *ngIf="!edit">
+        <app-display-tables
+          *ngIf="event?.tables != undefined"
+          [tables]="event?.tables"
+          (tableIndex)="clickedIndex($event)"
+        ></app-display-tables>
+      </aside>
+      <aside *ngIf="edit">
+        <app-table-list
+          [tables]="event?.tables"
+          (tables)="getTables($event)"
+        ></app-table-list>
+      </aside>
+    </div>
+    <div *ngIf="!edit">
+      <table class="border sizer">
+        <tr>
+          <th class="sizer">name</th>
+          <th class="sizer">information</th>
+        </tr>
+        <tr
+          *ngFor="let profile of profiles"
+          class="carder"
+        >
+          <td class="center">{{ profile.name }}</td>
+
+          <td class="center">
+            Table:
+            <p class="wrap">
+              {{ getCurrentTable(profile._id!!) }}
+            </p>
+          </td>
+        </tr>
+      </table>
+      <div *ngIf="beforeNext">
+        <h3>Has Rated their Match</h3>
+        <ol class="border">
+          <li *ngFor="let str of hasRated; index as i" value="">
+            {{ str }}
+          </li>
+        </ol>
+      </div>
+      <div>
+        <h3>Anything that shows up here</h3>
+        <p>Click to remove</p>
+        <ol class="border hover">
+          <li
+            *ngFor="let str of happenings; index as i"
+            value=""
+            (click)="remove(i)"
+          >
+            {{ str }}
+          </li>
+        </ol>
+      </div>
+    </div>
+  </aside>
+  <aside *ngIf="meeting != undefined">
+    <app-org-meeting-page
+      (done)="doneWithMeeting($event)"
+      [meeting]="meeting"
+      [event]="event"
+    ></app-org-meeting-page>
+  </aside>
+</section>

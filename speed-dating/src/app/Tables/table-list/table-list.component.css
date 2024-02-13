@@ -1,0 +1,15 @@
+.border {
+  border: 5px solid green;
+}
+
+.columns {
+}
+
+.single_column {
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  margin-top: 10px;
+}

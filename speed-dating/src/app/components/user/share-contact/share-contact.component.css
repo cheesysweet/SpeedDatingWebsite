@@ -1,0 +1,20 @@
+.view {
+    margin-top: 35px;
+}
+
+.border {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.save {
+    margin-top: 10px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: x-large;
+}

@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6394475e504b35e613e0263b"
+  },
+  "User1": {
+    "$oid": "63922db0fc6d3fc4af8c77a7"
+  },
+  "User2": {
+    "$oid": "63922db0fc6d3fc4af8c77ba"
+  },
+  "Table": "3",
+  "User1Results": {
+    "$oid": "6394495c504b35e613e0265d"
+  },
+  "User2Results": {
+    "$oid": "6394495c504b35e613e02660"
+  }
+},{
+  "_id": {
+    "$oid": "6394475e504b35e613e0263c"
+  },
+  "User1": {
+    "$oid": "63922db0fc6d3fc4af8c77a9"
+  },
+  "User2": {
+    "$oid": "63922db0fc6d3fc4af8c77b9"
+  },
+  "Table": "1",
+  "User1Results": {
+    "$oid": "6394495c504b35e613e0265f"
+  },
+  "User2Results": {
+    "$oid": "6394495c504b35e613e02662"
+  }
+},{
+  "_id": {
+    "$oid": "6394475e504b35e613e0263d"
+  },
+  "User1": {
+    "$oid": "63922db0fc6d3fc4af8c77a8"
+  },
+  "User2": {
+    "$oid": "63922db0fc6d3fc4af8c77b8"
+  },
+  "Table": "2",
+  "User1Results": {
+    "$oid": "6394495c504b35e613e0265e"
+  },
+  "User2Results": {
+    "$oid": "6394495c504b35e613e02661"
+  }
+}]

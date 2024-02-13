@@ -1,0 +1,30 @@
+.image {
+  height: 30vh;
+}
+
+.grid {
+  border: 25px solid #00000000
+}
+
+.profileAside {
+  padding: 2vw;
+}
+
+.profiles {
+  border: 2px solid black;
+  width: 100%;
+  display: grid;
+  grid: none / 50% auto;
+}
+
+.list_style_none {
+  list-style-type: none;
+}
+
+.visualWeight > p {
+  font-size: 20;
+}
+
+.blackGround {
+  background-color: #54545CBB;
+}

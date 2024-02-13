@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content div {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 20%;
+}
+
+.content div:first-of-type {
+    flex: 1;
+    width: 100%;
+}
+
+.content .checkboxes {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content div:last-of-type {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+label {
+    float: left;
+    margin: 5px 0px;
+    width: 100%;
+    text-align: left;
+}
+
+input {
+    float: right;
+    margin: 5px 0px;
+    border: solid 1px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 90%;
+    min-height: 50px;
+    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+}
+
+p {
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a, a button{
+    color: #c5d5cb;
+    width: 50%;
+}
+
+a{
+    float: left;
+}
+
